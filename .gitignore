@@ -1,0 +1,16 @@
+# Windows 临时文件
+*.exe
+*.obj
+*.log
+*.tmp
+
+# VSCode 配置文件夹
+.vscode/
+
+# 编译生成的目录
+bin/
+build/
+
+# 作业文件夹里临时文件
+*.out
+*.class
