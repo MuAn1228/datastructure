@@ -1147,6 +1147,101 @@ void levelOrder(BiNode* root) {
     }
 }
 
+void levelOrder(BiNode* root){
+    if(root == NULL){
+        return;
+    }
+    Queue q;
+    initQueue(&q);
+    enqueue(&q,root);
+    while(!isEmpty(&q)){
+        BiNode* node = dequeue(&q);
+        printf("%d",node->data);
+        if(node->left){
+            enqueue(&q,node->left);
+        }
+        if(node->right){
+            enqueue(&q,node->right);
+        }
+    }
+}
+
+void levelOrder(BiNode* root){
+    if(root == NULL){
+        return;
+    }
+    Queue q;
+    initQueue(&q);
+    enqueue(&q,root);
+    while(!isEmpty(&q)){
+        BiNode* node = dequeue(&q);
+        printf("%d",node->data);
+        if(node->left){
+            enqueue(&q,node->left);
+        }
+        if(node->right){
+            enqueue(&q,node->right);
+        }
+    }
+}
+
+void levelOrder(BiNode* root){
+    if(root == NULL){
+        return;
+    }
+    Queue q;
+    initQueue(&q);
+    enqueue(&q,root);
+    while (!isEmpty(&q)){
+        BiNode* node = dequeue(&q);
+        printf("%d",node->data);
+        if(node->left){
+            enqueue(&q,node->left);
+        }
+        if(node->right){
+            enqueue(&q,node->right);
+        }
+    } 
+}
+
+void levelOrder(BiNode* root){
+    if(root == NULL){
+        return;
+    }
+    Queue q;
+    initQueue(&q);
+    enqueue(&q);
+    while(!isEmpty(&q)){
+        BiNode* node = dequeue(&q);
+        printf("%d",node->data);
+        if(node->left){
+            enqueue(&q,node->left);
+        }
+        if(node->right){
+            enqueue(&q,node->right);
+        }
+    }
+}
+
+void levelOrder(BiNode* root){
+    if(root == NULL){
+        return;
+    }
+    Queue q;
+    initQueue(&q);
+    enqueue(&q,root);
+    while(!isEmpty){
+        BiNode* node = dequeue(&q);
+        printf("%d",node->data);
+        if(node->left){
+            enqueue(&q,node->left);
+        }
+        if(node->right){
+            enqueue(&q,node->right);
+        }
+    }
+}
+
 
 
 
@@ -1160,8 +1255,33 @@ BiNode* findParent(BiNode* root, int key, BiNode* parent) {
     return findParent(root->right, key, root);
 }
 
+BiNode* findParent(BiNode* root, int key, BiNode* parent){
+    if(!root){
+        return NULL;
+    }
+    if(root->data == key){
+        return parent;
+    }
+    BiNode* leftRes = findParent(root->left, key, root);
+    if(leftRes){
+        return leftRes;
+    }
+    return findParent(root->right, key, root);
+}
 
-
+BiNode* findParent(BiNode* root, int key, BiNode* parent){
+    if(!root){
+        return NULL;
+    }
+    if(root->data == key){
+        return parent;
+    }
+    BiNode* leftRes = findParent(root->left,key,root);
+    if(leftRes){
+        return leftRes;
+    }
+    return findParent(root->right,key,root);
+}
 
 
 //根据前序+中序重建二叉树
